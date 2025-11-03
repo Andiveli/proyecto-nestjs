@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Auth } from './interfaces/auth/auth.interface';
-import { AuthEntity } from './entities/auth.entity/auth.entity';
+import { Auth } from '../interfaces/auth/auth.interface';
+import { AuthEntity } from '../entities/auth.entity';
 
 @Injectable()
 export class AuthService {

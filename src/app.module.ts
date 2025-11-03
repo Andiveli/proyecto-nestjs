@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './modules/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthEntity } from './entities/auth.entity';
 
 @Module({
   imports: [AuthModule, TypeOrmModule.forRoot({
@@ -12,6 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     database: 'appsalon',
     autoLoadEntities: true,
     // synchronize: true,
+    entities: [AuthEntity],
   })],
 })
 export class AppModule {}
