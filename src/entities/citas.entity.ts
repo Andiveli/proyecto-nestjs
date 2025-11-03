@@ -15,7 +15,7 @@ export class Citas {
 
     @ManyToMany(() => AuthEntity, (usuario) => usuario.citas)
     @JoinColumn({name: 'usuarioId'})
-    usuario: AuthEntity[];
+    usuarioId: AuthEntity[];
 
     @Column()
     completa: boolean;
