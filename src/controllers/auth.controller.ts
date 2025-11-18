@@ -76,4 +76,11 @@ export class AuthController {
         this.authService.guardar(usuario);
         return ({msg: 'Contraseña actualizada correctamente'});
     }
+
+
+    async crearPass(usuario: string) {
+        const existe = await this.authService.confirmarUsuario(usuario);
+        if(!existe) return;
+        return {msg: "Todo está bien"};
+    }
 }
